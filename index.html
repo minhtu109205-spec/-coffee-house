@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Coffee House - Website bán cà phê">
+  <title>Coffee House | Cà phê & đồ uống</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#home">☕ Coffee<span>House</span></a>
+      <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#products">Sản phẩm</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+      <button class="cart-btn" onclick="openCart()">🛒 <span>Giỏ hàng</span> <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">COFFEE • TEA • DESSERT</p>
+          <h1>Một ly ngon,<br><span>một ngày vui.</span></h1>
+          <p class="hero-text">Những ly cà phê được chọn lọc kỹ lưỡng, pha chế mỗi ngày và giao tận nơi.</p>
+          <a href="#products" class="primary-btn">Xem sản phẩm →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">MENU</p>
+            <h2>Sản phẩm nổi bật</h2>
+          </div>
+          <div class="filters">
+            <button class="filter active" data-category="all">Tất cả</button>
+            <button class="filter" data-category="coffee">Cà phê</button>
+            <button class="filter" data-category="tea">Trà</button>
+            <button class="filter" data-category="cake">Bánh</button>
+          </div>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="about-image"></div>
+        <div>
+          <p class="eyebrow">VỀ COFFEE HOUSE</p>
+          <h2>Cà phê ngon từ những điều giản dị.</h2>
+          <p>Chúng tôi mang đến những thức uống quen thuộc với nguyên liệu được lựa chọn cẩn thận, không gian hiện đại và dịch vụ thân thiện.</p>
+          <div class="stats">
+            <div><strong>10+</strong><span>Sản phẩm</span></div>
+            <div><strong>4.9★</strong><span>Đánh giá</span></div>
+            <div><strong>30'</strong><span>Giao hàng</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-box">
+        <div>
+          <p class="eyebrow">LIÊN HỆ</p>
+          <h2>Đặt món thật dễ dàng.</h2>
+          <p>Hotline: <b>0123 456 789</b><br>Email: coffeehouse@example.com</p>
+        </div>
+        <a class="primary-btn" href="tel:0123456789">Gọi đặt hàng</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div class="logo">☕ Coffee<span>House</span></div>
+      <p>© 2026 Coffee House. Website bài tập môn Thiết kế Web.</p>
+    </div>
+  </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close" onclick="closeModal()">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-info">
+        <p class="eyebrow" id="modalCategory"></p>
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+        <strong class="modal-price" id="modalPrice"></strong>
+        <button class="primary-btn full" id="modalAdd">Thêm vào giỏ hàng</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cartPanel" class="cart-panel">
+    <div class="cart-header"><h2>🛒 Giỏ hàng</h2><button onclick="closeCart()">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="total"><span>Tổng cộng</span><strong id="cartTotal">0đ</strong></div>
+      <button class="primary-btn full" onclick="checkout()">Đặt hàng</button>
+    </div>
+  </div>
+  <div id="overlay" class="overlay hidden" onclick="closeCart(); closeModal()"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
